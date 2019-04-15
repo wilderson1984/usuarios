@@ -12,7 +12,7 @@ import org.hibernate.validator.constraints.br.CPF;
 @Entity(name="USUARIOS")
 public class Usuario {
 	@Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.AUTO)
 	@Column(name="ID")
 	private Long id;
 	
