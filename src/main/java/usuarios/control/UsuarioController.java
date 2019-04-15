@@ -1,8 +1,5 @@
 package usuarios.control;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 import java.util.Optional;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,7 +20,7 @@ public class UsuarioController {
 	}
 
 	@PostMapping("/usuario/")
-	public Usuario createCart(@RequestBody Usuario request) {
+	public Usuario createUsuario(@RequestBody Usuario request) {
 		return usuarioRepository.save(request);
 	}
 
