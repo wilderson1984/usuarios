@@ -12,7 +12,7 @@ public class TestMySQLConnection {
 		Connection connection = null;
 		try {
 			driver = "com.mysql.jdbc.Driver";
-			url = "jdbc:mysql://35.192.136.197/usuarios";
+			url = "jdbc:mysql://35.192.136.197:3306/usuarios";
 			user = "opet";
 			password = "opet";
 			Class.forName(driver);
