@@ -5,7 +5,6 @@ spring:
     properties.hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
     show-sql: true
     hibernate.default_schema: usuarios
-    hibernate.ddl-auto: "update"
   datasource:
     username: "root"
     password: "root"
