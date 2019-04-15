@@ -1,5 +1,8 @@
 package usuarios.control;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Optional;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,12 +22,12 @@ public class UsuarioController {
 		this.usuarioRepository = usuarioRepository;
 	}
 
-	@PostMapping("/usuario")
+	@PostMapping("/usuario/")
 	public Usuario createCart(@RequestBody Usuario request) {
 		return usuarioRepository.save(request);
 	}
 
-	@GetMapping("/usuario/{id}")
+	@GetMapping("/usuario/{id}/")
 	public ResponseEntity<Usuario> getUser(@PathVariable("id") Long id) {
 		Optional<Usuario> maybeUser = usuarioRepository.findById(id);
 		if (!maybeUser.isPresent()) {
@@ -32,5 +35,10 @@ public class UsuarioController {
 		}
 		return new ResponseEntity<>(maybeUser.get(), HttpStatus.OK);
 	}
-
+	
+	@GetMapping("/usuario/list/")
+    public ResponseEntity<Iterable<Usuario>> listAllUsers() {
+        Iterable<Usuario> users = usuarioRepository.findAll();
+        return new ResponseEntity<Iterable<Usuario>>(users, HttpStatus.OK);
+    }
 }
