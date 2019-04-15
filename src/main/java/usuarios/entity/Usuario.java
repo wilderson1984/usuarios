@@ -17,8 +17,8 @@ public class Usuario {
 	private Long id;
 	
 	@CPF
-	@Column(name="CPF")
-	private int cpf;
+	@Column(name="CPF", nullable = true)
+	private String cpf;
 	@Column(name="NOME")
 	private String nome;
 	@Column(name="EMAIL")
@@ -41,10 +41,10 @@ public class Usuario {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public int getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
-	public void setCpf(int cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 	public String getNome() {
