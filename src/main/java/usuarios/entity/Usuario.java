@@ -9,20 +9,27 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import org.hibernate.validator.constraints.br.CPF;
 
-@Entity(name="usuarios")
+@Entity(name="USUARIOS")
 public class Usuario {
 	@Id
     @GeneratedValue(strategy= GenerationType.AUTO)
+	@Column(name="ID")
 	private int id;
 	
 	@CPF
+	@Column(name="CPF")
 	private int cpf;
+	@Column(name="NOME")
 	private String nome;
+	@Column(name="EMAIL")
 	private String email;
+	@Column(name="PROFISSAO")
 	private String profissao;
+	@Column(name="GENERO")
 	private String genero;
+	@Column(name="ENDERECO")
 	private String endereco;
-	@Column(name="dt_nasc")
+	@Column(name="DT_NASC")
 	private Date dtNasc;
 	
 	public Usuario() {}

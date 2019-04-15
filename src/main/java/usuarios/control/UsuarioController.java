@@ -25,11 +25,12 @@ public class UsuarioController {
 	}
 
 	@GetMapping("/usuario/{id}")
-	public ResponseEntity<Usuario> getCart(@PathVariable("id") Long id) {
+	public ResponseEntity<Usuario> getUser(@PathVariable("id") Long id) {
 		Optional<Usuario> maybeUser = usuarioRepository.findById(id);
 		if (!maybeUser.isPresent()) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 		return new ResponseEntity<>(maybeUser.get(), HttpStatus.OK);
 	}
+
 }
