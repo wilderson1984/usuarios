@@ -15,7 +15,7 @@ import org.hibernate.validator.constraints.br.CPF;
 public class Usuario {
 	@Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-	private int id;
+	private long id;
 	
 	@CPF
 	private int cpf;
