@@ -2,6 +2,7 @@ package usuarios.entity;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,7 +13,7 @@ import org.hibernate.validator.constraints.br.CPF;
 public class Usuario {
 	@Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-	private long id;
+	private int id;
 	
 	@CPF
 	private int cpf;
@@ -21,6 +22,7 @@ public class Usuario {
 	private String profissao;
 	private String genero;
 	private String endereco;
+	@Column(name="dt_nasc")
 	private Date dtNasc;
 	
 	public Usuario() {}
